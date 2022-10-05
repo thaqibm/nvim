@@ -92,7 +92,20 @@ return packer.startup(function(use)
         }
     }
 
+    -- bufferline
     use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+
+
+    -- toggleterm
+    use "akinsho/toggleterm.nvim"
+
+    -- lualine 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    -- make nvim faster
+    -- use 'lewis6991/impatient.nvim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
