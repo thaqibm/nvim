@@ -4,4 +4,7 @@ require "userv1.plugin"
 require "userv1.colorscheme"
 require "userv1.cmp"
 require "userv1.lsp"
+require "userv1.treesitter"
+require "userv1.nvim-tree"
+require "userv1.bufferline"
 
