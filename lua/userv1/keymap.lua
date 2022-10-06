@@ -42,8 +42,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 
 
 -- Move text up and down
-keymap("n", "<S-j>", ":m +1<CR>==", opts)
-keymap("n", "<S-k>", ":m -2<CR>==", opts)
+keymap("n", "<M-j>", ":m +1<CR>==", opts)
+keymap("n", "<M-k>", ":m -2<CR>==", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
