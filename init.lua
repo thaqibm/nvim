@@ -12,3 +12,8 @@ require "userv1.toggleterm"
 -- Disabled plugins:
 -- require "userv1.lualine"
 -- require "userv1.impatient"
+
+local o = vim.opt
+local g = vim.g
+
+o.guifont = 'Hack Nerd Font:h16'
