@@ -104,6 +104,13 @@ return packer.startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+
+    -- latex pdf preview
+    use {
+        "savq/paq-nvim",
+        requires = {"frabjous/knap"}
+    }
     -- make nvim faster
     -- use 'lewis6991/impatient.nvim'
 

@@ -8,6 +8,7 @@ require "userv1.treesitter"
 require "userv1.nvim-tree"
 require "userv1.bufferline"
 require "userv1.toggleterm"
+require "userv1.knap"
 
 -- Disabled plugins:
 -- require "userv1.lualine"
