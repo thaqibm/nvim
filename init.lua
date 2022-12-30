@@ -9,6 +9,7 @@ require "userv1.nvim-tree"
 require "userv1.bufferline"
 require "userv1.toggleterm"
 require "userv1.knap"
+require "userv1.telescope"
 
 -- Disabled plugins:
 -- require "userv1.lualine"

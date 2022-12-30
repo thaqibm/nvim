@@ -111,6 +111,10 @@ return packer.startup(function(use)
         "savq/paq-nvim",
         requires = {"frabjous/knap"}
     }
+
+    -- nvim telescope
+    use "nvim-telescope/telescope.nvim"
+
     -- make nvim faster
     -- use 'lewis6991/impatient.nvim'
 

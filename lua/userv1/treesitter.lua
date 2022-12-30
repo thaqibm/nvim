@@ -8,7 +8,7 @@ configs.setup {
         disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
     },
-    indent = { 
+    indent = {
         enable = true,
         disable = {'cpp', 'c'}
     },
