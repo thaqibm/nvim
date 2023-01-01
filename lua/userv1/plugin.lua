@@ -115,6 +115,13 @@ return packer.startup(function(use)
     -- nvim telescope
     use "nvim-telescope/telescope.nvim"
 
+
+    -- markdown-preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = {'markdown'}
+    })
     -- make nvim faster
     -- use 'lewis6991/impatient.nvim'
 
