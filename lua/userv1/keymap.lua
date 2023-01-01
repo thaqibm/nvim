@@ -57,3 +57,6 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 
+-- Spell check
+vim.keymap.set("n", "<F2>", ":set invspell<CR>")
+

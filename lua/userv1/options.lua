@@ -32,6 +32,8 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.cursorline = true                       -- highlight the current line
+vim.opt.spelllang = { 'en_us' }
+
 
 vim.opt.shortmess:append "c"
 

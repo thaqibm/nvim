@@ -122,6 +122,12 @@ return packer.startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     })
+
+    -- spell 
+    use({
+        "f3fora/cmp-spell",
+        requires = {"hrsh7th/nvim-cmp"}
+    })
     -- make nvim faster
     -- use 'lewis6991/impatient.nvim'
 
