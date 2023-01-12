@@ -30,6 +30,10 @@ local gknapsettings = {
     texoutputext = "pdf",
     textopdf = "pdflatex -synctex=1 -halt-on-error -interaction=batchmode %docroot%",
     textopdfviewerlaunch = "open %outputfile%",
-    textopdfviewerrefresh = "kill -HUP %pid%"
+    textopdfviewerrefresh = "kill -HUP %pid%",
+    markdownoutputext = "pdf",
+    markdowntopdfviewerlaunch = "open %outputfile%",
+    markdowntohtmlviewerlaunch = "open %outputfile%",
+    textopdfshorterror = ""
 }
 vim.g.knap_settings = gknapsettings
