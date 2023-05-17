@@ -2,10 +2,15 @@ local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	return
 end
---[[
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
+
+-- TODO: Not hardcode values for fg, bg
+-- local bg = vim.api.nvim_get_hl_by_name("TabLine", true).bg
+vim.api.nvim_set_hl(0, 'lualinered', { fg = "#bd2c00", bg = "#252525", bold = true} )
+vim.api.nvim_set_hl(0, 'lualineyellow', { fg = "#F59E0A", bg = "#252525", bold = true})
+vim.api.nvim_set_hl(0, 'lualinegreen', { fg = "#6cc644", bg = "#252525", bold = true})
 
 local diagnostics = {
 	"diagnostics",
@@ -20,7 +25,7 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	symbols = { added = "%#lualinegreen#+", modified = "%#lualineyellow#", removed = "%#lualinered#-" }, -- changes diff symbols
   cond = hide_in_width
 }
 
@@ -33,7 +38,7 @@ local mode = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = true,
+	icons_enabled = true
 }
 
 local branch = {
@@ -46,29 +51,14 @@ local location = {
 	"location",
 	padding = 0,
 }
-
--- cool function for progress
-local progress = function()
-	local current_line = vim.fn.line(".")
-	local total_lines = vim.fn.line("$")
-	local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-	local line_ratio = current_line / total_lines
-	local index = math.ceil(line_ratio * #chars)
-	return chars[index]
-end
-
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
-vim.opt.cmdheight=0
 lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
@@ -91,5 +81,5 @@ lualine.setup({
 	tabline = {},
 	extensions = {},
 })
---]]
-lualine.setup()
+-- lualine.setup()
+

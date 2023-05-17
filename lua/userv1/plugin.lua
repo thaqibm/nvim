@@ -59,10 +59,10 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp" -- lsp completions
 
     -- snippets
-    require("luasnip/loaders/from_vscode").lazy_load()
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+    require("luasnip/loaders/from_vscode").lazy_load()
 
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP

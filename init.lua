@@ -10,9 +10,9 @@ require "userv1.bufferline"
 require "userv1.toggleterm"
 require "userv1.knap"
 require "userv1.telescope"
+require "userv1.lualine"
 
 -- Disabled plugins:
--- require "userv1.lualine"
 -- require "userv1.impatient"
 
 local o = vim.opt
