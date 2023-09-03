@@ -10,6 +10,15 @@ bufferline.setup{
             bold = true,
             italic = false,
         },
+    },
+    options = {
+        hover = {
+            enabled = true,
+            delay = 200,
+            reveal = {'close'}
+        },
+        close_icon = '',
+        buffer_close_icon = '',
     }
 }
 

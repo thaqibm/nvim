@@ -5,7 +5,7 @@ require "userv1.colorscheme"
 require "userv1.cmp"
 require "userv1.lsp"
 require "userv1.treesitter"
-require "userv1.nvim-tree"
+require "userv1.nvimtree"
 require "userv1.bufferline"
 require "userv1.toggleterm"
 require "userv1.knap"
@@ -17,5 +17,9 @@ require "userv1.lualine"
 
 local o = vim.opt
 local g = vim.g
+
+
+g.loaded_netrw       = 1
+g.loaded_netrwPlugin = 1
 
 o.guifont = 'Hack Nerd Font:h16'
