@@ -15,12 +15,12 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-    Text = "󰦨",
+    Text = "",
     Method = "m",
-    Function = "󰊕",
+    Function = "",
     Constructor = "",
     Field = "",
-    Variable = "󱃼",
+    Variable = "",
     Class = "",
     Interface = "",
     Module = "",

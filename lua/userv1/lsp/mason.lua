@@ -46,6 +46,11 @@ mason_lspconfig.setup_handlers {
             opts = vim.tbl_deep_extend("force", pyright_opts, opts)
         end
 
+        if server == "typst_lsp" then 
+            local typst_lsp_ops = require("userv1.lsp.settings.typst_lsp")
+            opts = vim.tbl_deep_extend("force", typst_lsp_ops, opts)
+        end
+
         lspconfig[server].setup(opts)
     end
 }
