@@ -136,6 +136,22 @@ return packer.startup(function(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
+    
+    use({
+          "folke/tokyonight.nvim",
+    })
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    use 'shaunsingh/nord.nvim'
+    use ({ 'projekt0n/github-nvim-theme' })
+    use 'arzg/vim-colors-xcode'
+    use 'navarasu/onedark.nvim'
+    use 'rakr/vim-one'
+
+
+    -- Typst
+    use {'kaarmu/typst.vim', ft = {'typst'}}
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
