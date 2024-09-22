@@ -21,5 +21,3 @@ bufferline.setup{
         buffer_close_icon = '',
     }
 }
-
-
