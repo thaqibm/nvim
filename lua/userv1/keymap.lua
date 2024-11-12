@@ -60,3 +60,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Spell check
 vim.keymap.set("n", "<F2>", ":set invspell<CR>")
 
+
+-- TYpst
+vim.keymap.set("n", "<leader>p", ":TypstWatch<CR>")
+
