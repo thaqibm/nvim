@@ -1,3 +1,5 @@
+
+local config = function()
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 local file_icons = {
@@ -21,10 +23,7 @@ local file_icons = {
     },
 }
 
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    return
-end
+nvim_tree = require("nvim-tree")
 
 local function my_on_attach(bufnr)
     local api = require('nvim-tree.api')
@@ -35,6 +34,7 @@ local function my_on_attach(bufnr)
 
     api.config.mappings.default_on_attach(bufnr)
 
+    vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
     vim.keymap.set('n', 'O', '', { buffer = bufnr })
     vim.keymap.del('n', 'O', { buffer = bufnr })
     vim.keymap.set('n', '<2-RightMouse>', '', { buffer = bufnr })
@@ -93,4 +93,16 @@ nvim_tree.setup {
         }
     },
     on_attach = my_on_attach
+}
+
+end
+
+return {
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons"
+		},
+		config = config
+	}
 }
