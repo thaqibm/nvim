@@ -21,6 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 -- Setup lazy.nvim
 require("lazy").setup({
+  root = vim.fn.stdpath("data") .. "/lazy",
   spec = {
     -- import your plugins
     { import = "plugins" },
