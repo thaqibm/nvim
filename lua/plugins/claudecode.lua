@@ -31,7 +31,7 @@ return {
         popd_cmd = 'popd',       -- Command to pop directory from stack (e.g., 'popd' for bash/zsh, 'exit' for nushell)
       },
       -- Command settings
-      command = "claude",        -- Command used to launch Claude Code
+      command = "code",        -- Command used to launch Claude Code
       -- Command variants
       command_variants = {
         -- Conversation management
