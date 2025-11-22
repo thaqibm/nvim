@@ -27,10 +27,33 @@ local function setup_servers()
 
     handler.setup()
 
-    vim.lsp.config("*", {
-        capabilities = handler.capabilities,
-        on_attach = handler.on_attach,
-    })
+    local function with_defaults(server_opts)
+        server_opts = vim.deepcopy(server_opts or {})
+
+        -- Merge capabilities so per-server overrides can extend them.
+        if server_opts.capabilities then
+            server_opts.capabilities = vim.tbl_deep_extend(
+                "force",
+                {},
+                handler.capabilities,
+                server_opts.capabilities
+            )
+        else
+            server_opts.capabilities = handler.capabilities
+        end
+
+        local user_on_attach = server_opts.on_attach
+        if user_on_attach then
+            server_opts.on_attach = function(client, bufnr)
+                handler.on_attach(client, bufnr)
+                user_on_attach(client, bufnr)
+            end
+        else
+            server_opts.on_attach = handler.on_attach
+        end
+
+        return server_opts
+    end
 
     local servers = get_servers()
     local enabled = {}
@@ -41,7 +64,7 @@ local function setup_servers()
     end
 
     for name, server_opts in pairs(servers) do
-        vim.lsp.config(name, server_opts)
+        vim.lsp.config(name, with_defaults(server_opts))
         local resolved = vim.lsp.config[name]
         local cmd = resolved and resolved.cmd
 
